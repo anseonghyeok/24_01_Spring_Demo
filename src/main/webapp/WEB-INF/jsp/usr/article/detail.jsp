@@ -278,9 +278,7 @@ function doModifyReply(replyId) {
 				</tr>
 				<tr>
 					<th>조회수</th>
-					<td>
-						<span class="article-detail__hit-count">${article.hitCount }</span>
-					</td>
+					<td><span class="article-detail__hit-count">${article.hitCount }</span></td>
 				</tr>
 				<tr>
 					<th>제목</th>
@@ -302,29 +300,24 @@ function doModifyReply(replyId) {
 				<a class="btn btn-outline" onclick="if(confirm('정말 삭제하시겠습니까?') == false) return false;"
 					href="../article/doDelete?id=${article.id }">삭제</a>
 			</c:if>
-		</div>
+		</div>   
 	</div>
 </section>
 
 <section class="mt-5 px-3">
 	<c:if test="${rq.isLogined() }">
 		<form action="../reply/doWrite" method="POST" onsubmit="ReplyWrite__submit(this); return false;">
-			<input type="hidden" name="relTypeCode" value="article" />
-			<input type="hidden" name="relId" value="${article.id }" />
+			<input type="hidden" name="relTypeCode" value="article" /> <input type="hidden" name="relId" value="${article.id }" />
 			<table class="write-box table-box-1" border="1">
 				<tbody>
 					<tr>
 						<th>내용</th>
-						<td>
-							<textarea class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
-								placeholder="내용을 입력해주세요" name="body"> </textarea>
-						</td>
+						<td><textarea class="input input-bordered input-primary w-full max-w-xs" autocomplete="off" type="text"
+								placeholder="내용을 입력해주세요" name="body"> </textarea></td>
 					</tr>
 					<tr>
 						<th></th>
-						<td>
-							<input class="btn btn-outline btn-info" type="submit" value="댓글 작성" />
-						</td>
+						<td><input class="btn btn-outline btn-info" type="submit" value="댓글 작성" /></td>
 					</tr>
 				</tbody>
 			</table>
@@ -360,30 +353,24 @@ function doModifyReply(replyId) {
 					<tr class="hover">
 						<td>${reply.id }</td>
 						<td>${reply.regDate.substring(0,10) }</td>
-						<td>
-							<span id="reply-${reply.id }">${reply.body }</span>
+						<td><span id="reply-${reply.id }">${reply.body }</span>
 							<form method="POST" id="modify-form-${reply.id }" style="display: none;" action="/usr/reply/doModify">
 								<input type="text" value="${reply.body }" name="reply-text-${reply.id }" />
-							</form>
-						</td>
+							</form></td>
 						<td>${reply.extra__writer }</td>
 						<td>${reply.goodReactionPoint }</td>
 						<td>${reply.badReactionPoint }</td>
-						<td>
-							<c:if test="${reply.userCanModify }">
+						<td><c:if test="${reply.userCanModify }">
 								<%-- 							href="../reply/modify?id=${reply.id }" --%>
 								<button onclick="toggleModifybtn('${reply.id}');" id="modify-btn-${reply.id }" style="white-space: nowrap;"
 									class="btn btn-outline">수정</button>
 								<button onclick="doModifyReply('${reply.id}');" style="white-space: nowrap; display: none;"
 									id="save-btn-${reply.id }" class="btn btn-outline">저장</button>
-							</c:if>
-						</td>
-						<td>
-							<c:if test="${reply.userCanDelete }">
+							</c:if></td>
+						<td><c:if test="${reply.userCanDelete }">
 								<a style="white-space: nowrap;" class="btn btn-outline"
 									onclick="if(confirm('정말 삭제하시겠습니까?') == false) return false;" href="../reply/doDelete?id=${reply.id }">삭제</a>
-							</c:if>
-						</td>
+							</c:if></td>
 					</tr>
 				</c:forEach>
 			</tbody>

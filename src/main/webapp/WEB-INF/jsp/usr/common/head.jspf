@@ -21,8 +21,12 @@
 </head>
 <body>
 	<header>
-		<div class="h-20 flex mx-auto items-center text-3xl">
-			<a href="/">LOGO</a>
+	<div class="h-32"></div>
+		<div class="h-20 flex justify-center items-center text-3xl">
+    <a href="/">
+        <img src="/resource/tgif.jpg" class="w-1/2" alt="TGIF">
+    </a>
+</div>
 			<div class="flex-grow"></div>
 			<ul class="flex">
 				<li><a class="hover:underline" href="/">HOME</a></li>

@@ -3,7 +3,11 @@
 <c:set var="pageTitle" value="MYPAGE"></c:set>
 <%@ include file="../common/head.jspf"%>
 
-
+<div>1${loginedMember }</div>
+<div>2${rq.loginedMember }</div>
+<div>${loginedMember.loginId }</div>
+<div>${rq.loginedMember.loginId }</div>
+<div>${rq.loginedMember.getLoginId() }</div>
 <section class="mt-8 text-xl px-4 ">
 	<div class="">
 		<table class="table-box-1 " border="1">
@@ -14,27 +18,27 @@
 			<tbody>
 				<tr>
 					<th>가입일</th>
-					<td>${loginedMember.regDate }</td>
+					<td>${rq.loginedMember.regDate }</td>
 				</tr>
 				<tr>
 					<th>아이디</th>
-					<td>${loginedMember.loginId }</td>
+					<td>${rq.loginedMember.loginId }</td>
 				</tr>
 				<tr>
 					<th>이름</th>
-					<td>${loginedMember.name }</td>
+					<td>${rq.loginedMember.name }</td>
 				</tr>
 				<tr>
 					<th>닉네임</th>
-					<td>${loginedMember.nickname }</td>
+					<td>${rq.loginedMember.nickname }</td>
 				</tr>
 				<tr>
 					<th>전화번호</th>
-					<td>${loginedMember.cellphoneNum }</td>
+					<td>${rq.loginedMember.cellphoneNum }</td>
 				</tr>
 				<tr>
 					<th>이메일</th>
-					<td>${loginedMember.email }</td>
+					<td>${rq.loginedMember.email }</td>
 				</tr>
 				<tr>
 					<th></th>
